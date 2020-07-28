@@ -1,5 +1,15 @@
-h1 {
-    background-color: yellow;
+#nav-bar {
+    background-color: whitesmoke;
+}
 
-    
+#heading {
+    color: white; 
+}
+
+#description {
+    color: white; 
+}
+
+#main-page {
+    background-color: white;
 }
