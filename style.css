@@ -1,23 +1,49 @@
 #nav-bar {
-    background-color: #ff7400;
-    color: white; 
+    background-color: #66545e;
+    color: white;
     width: 100%;
 }
 
-#main-page {
-    background-image: url(assets/images/opening.jpg);
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-size: cover;
-    display: flex; 
-    min-height: 100vh; 
-    flex-direction: column;   
+.header {
+    text-align: center;
+    color: #0c0c0c;
+    text
 }
 
-.section {
-    margin: 0px 0px 20px 0px; 
+#icon-block {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
+.park-list {
+    padding-bottom: 2px; 
+    margin: 3px; 
+    text-align: center;
+    border-radius: 5px;
+    background-color: #66545e;
+}
+
+.park-list:hover {
+    background-color: #9284a3;
+  }
+
+.park-list:visited {
+    background-color: purple;
+  }
+
+  h4 {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      position: relative;
+      top: 4.7em;
+  }
+
+.park-headers{
+    background-color: darkolivegreen;
+    width: 300px;
+    opacity: 0.5;
+}
 
 #heading {
     color: white; 
