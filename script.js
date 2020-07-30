@@ -1,10 +1,11 @@
 var apiKey = "ybHBduA57s39icEEjF2qadz3AtlfLgn9sn6AjddB";
 var queryURL =
   "https://developer.nps.gov/api/v1/parks?stateCode=fl&api_key=" + apiKey;
-L.mapquest.key = "0tfYPkeZd3BGwgIqYGALw5AGWEC1jlLf";
+
 
 // 'Map' refers to a <div> element with the ID map
 function loadMap(lat, lon){
+L.mapquest.key = "0tfYPkeZd3BGwgIqYGALw5AGWEC1jlLf";
 var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 var baseLayer = L.mapquest.tileLayer("map");
 var map = L.mapquest.map("map", {
@@ -33,7 +34,7 @@ $.ajax({
   for (i = 0; i < response.data.length; i++) {
     statebutton = $("<button>");
     statebutton.attr("data-state", i);
-    statebutton.attr("class", "stateList");
+    statebutton.attr("class", "state-list btn");
     statebutton.text(response.data[i].fullName);
 
     $("#state-list").append(statebutton);
@@ -69,16 +70,17 @@ $.ajax({
 
     let parkLink = $("<a>");
     parkLink.attr("href", response.data[stateInfo].url);
-    parkLink.text(response.data[stateInfo].url);
+    parkLink.text("Visit their site: " + response.data[stateInfo].url);
     $("#state-link").append(parkLink);
 
     let dirText = $("<p>");
     dirText.text(response.data[stateInfo].directionsInfo);
     let dirLink = $("<a>");
     dirLink.attr("href", response.data[stateInfo].directionsUrl);
-    dirLink.text(response.data[stateInfo].directionsUrl);
+    dirLink.text("Get Directions: " + response.data[stateInfo].directionsUrl);
 
     $("#directions").append(dirText, dirLink);
+  
   }
 
   $(document).on("click", ".stateList", function () {
@@ -92,3 +94,7 @@ $.ajax({
 
 
 M.AutoInit();
+
+// $(document).ready(function(){
+//   $('.carousel').carousel();
+// });
