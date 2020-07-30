@@ -16,12 +16,11 @@
 
 <body>
     <nav class="white" role="navigation">
-        <div class="nav-wrapper container" id="nav-bar">
-            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <div class="nav-wrapper" id="nav-bar">
+            <span id="logo-container" class="brand-logo"><i class="material-icons">landscape</i></span>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Choose a State</a></li>
             </ul>
-
             <ul id="nav-mobile" class="sidenav">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
@@ -33,9 +32,9 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center black-text text-lighten-2">RoamForth</h1>
+                <h1 class="header">RoamForth</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">Explore our National Parks</h5>
+                    <h3 class="col s12 light">Traverse our National Parks</h3>
                 </div>
                 <div class="row center">
 
@@ -44,7 +43,7 @@
 
             </div>
         </div>
-        <div class="parallax"><img src="assets/images/opening.jpg" alt="Unsplashed background img 1"></div>
+        <div class="parallax"><img src="assets/images/opening.jpg" alt="opening of canyon view"></div>
     </div>
 
 
@@ -52,9 +51,9 @@
         <div class="section">
 
             <div class="col s12 m4">
-                <div class="icon-block">
+                <div class="icon-block" id="icon-block">
                     <h2 class="center brown-text"><i class="material-icons">explore</i></h2>
-                    <h5 class="center">Explore a Park</h5>
+                    <h5 class="center">Explore It!</h5>
                     <div id="state-list"></div>
 
                 </div>
@@ -68,9 +67,9 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot" id="picture-script">
             <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design
-                    </h5>
+                <h4 class="col s12 light">Information</h4>
+                <div class="row center park-headers">
+                    
                 </div>
             </div>
         </div>
@@ -79,6 +78,7 @@
 
     <div class="container">
         <div class="section">
+
             <!--   Icon Section   -->
             <div class="row">
                 <div class="col s12 m4">
@@ -91,10 +91,9 @@
                     </div>
                 </div>
 
-
                 <div class="col s12 m4" style="float:right">
                     <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                        <h2 class="center brown-text"><i class="material-icons">photo_camera</i></h2>
                         <h5 class="center">Park Images</h5>
 
                         <!-- <div class="carousel" id="state-pics"></div> -->
@@ -107,8 +106,9 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">Activities</h5>
+                <h4 class="col s12 light">Activities</h4>
+                <div class="row center park-headers">
+                    
                 </div>
             </div>
         </div>
@@ -134,9 +134,9 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design
-                    </h5>
+                <h4 class="col s12 light">Travel</h4>
+                <div class="row center park-headers">
+                    
                 </div>
             </div>
         </div>
@@ -151,13 +151,13 @@
                 <h5 class="center">Map It</h5>
                 <h3><i class="mdi-content-send brown-text"></i></h3>
                 <div class="col s12 md4" id="map" style="width: 600px; height: 400px;">
-                  
-                    
-                    
+
+
+
 
                 </div>
                 <div class="col s12 m4" style="float:right">
-                    <h4>Directions</h4>
+                    <h5>Directions</h5>
                     <div id="directions"></div>
                 </div>
             </div>

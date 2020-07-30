@@ -34,7 +34,7 @@ $.ajax({
   for (i = 0; i < response.data.length; i++) {
     statebutton = $("<button>");
     statebutton.attr("data-state", i);
-    statebutton.attr("class", "state-list btn");
+    statebutton.attr("class", "park-list btn");
     statebutton.text(response.data[i].fullName);
 
     $("#state-list").append(statebutton);
@@ -69,21 +69,23 @@ $.ajax({
     }
 
     let parkLink = $("<a>");
+    parkLink.attr("class", "btn")
     parkLink.attr("href", response.data[stateInfo].url);
-    parkLink.text("Visit their site: " + response.data[stateInfo].url);
+    parkLink.text("Visit Park Page");
     $("#state-link").append(parkLink);
 
     let dirText = $("<p>");
     dirText.text(response.data[stateInfo].directionsInfo);
     let dirLink = $("<a>");
+    dirLink.attr("class", "btn");
     dirLink.attr("href", response.data[stateInfo].directionsUrl);
-    dirLink.text("Get Directions: " + response.data[stateInfo].directionsUrl);
+    dirLink.text("Get Directions");
 
     $("#directions").append(dirText, dirLink);
   
   }
 
-  $(document).on("click", ".stateList", function () {
+  $(document).on("click", ".park-list", function () {
     let stateInfo = $(this).attr("data-state");
     loadstateInfo(stateInfo);
     let lat = response.data[stateInfo].latitude;
