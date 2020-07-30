@@ -91,4 +91,4 @@ $.ajax({
 });
 
 
-
+M.AutoInit();
