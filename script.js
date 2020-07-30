@@ -97,6 +97,11 @@ $.ajax({
 
 M.AutoInit();
 
+$(document).ready(function(){
+  $('.modal').modal();
+});
+     
+
 // $(document).ready(function(){
 //   $('.carousel').carousel();
 // });
