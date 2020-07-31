@@ -1,5 +1,5 @@
 #nav-bar {
-    background-color: #66545e;
+    background-color:	#800000;
     color: white;
     width: 100%;
 }
@@ -7,19 +7,22 @@
 .header {
     text-align: center;
     color: #0c0c0c;
-    text
 }
+
 
 #start{
     margin-top: 3%;
-    background-color: #66545e;
+    background-color: teal;
 }
 
 
 .material-icons {
     padding: 10px;
     font-size: 3rem; 
+}
 
+.titles{
+    margin-bottom: 3rem;
 }
 
 .park-list {
@@ -27,31 +30,13 @@
     margin: 3px; 
     text-align: center;
     border-radius: 5px;
-    background-color: #66545e;
+    background-color: 	teal;
 }
 
 .park-list:hover {
-    background-color: #9284a3;
+    background-color: #00b3b3;
   }
 
-.park-list:visited {
-    background-color: purple;
-  }
-
-  h4 {
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      position: relative;
-      top: 4.7em;
-  }
-
-#heading {
-    color: white; 
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
 
 #description {
     color: white; 
@@ -71,10 +56,13 @@
     display: inline;
   }
   
-
-
-#footer {
-    background-color: #ff7400;
-    width: 100%;
-
+  .grid-list {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    font-weight: bold;
+    padding-bottom: 25px;
 }
+
+  .page-footer {
+      background-color: 	#800000;
+  }
