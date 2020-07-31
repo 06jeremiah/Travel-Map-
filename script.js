@@ -1,6 +1,5 @@
 var apiKey = "ybHBduA57s39icEEjF2qadz3AtlfLgn9sn6AjddB";
-var queryURL =
-  "https://developer.nps.gov/api/v1/parks?stateCode=fl&api_key=" + apiKey;
+
 
 
 // 'Map' refers to a <div> element with the ID map
@@ -24,6 +23,10 @@ L.control
   })
   .addTo(map);
 }
+
+function pickState (state) {
+var queryURL =
+  "https://developer.nps.gov/api/v1/parks?stateCode=" + state + "&api_key=" + apiKey;
 
 $.ajax({
   url: queryURL,
@@ -49,21 +52,21 @@ $.ajax({
     $("#park-description").text(response.data[stateInfo].description);
 
     let statePics = response.data[stateInfo].images;
-    for (i = 0; i < statePics.length; i++) {
-      let carouselPic = $("<a>").attr("class", "carousel-item");
-      let carouselImg = $("<img>").attr(
-        "src",
-        response.data[stateInfo].images[i].url
-      );
+    for (i = 0; i < 5; i++) {
 
-      carouselPic.append(carouselImg);
-      $("#state-pics").append(carouselPic);
+
+      // let carouselPic = $("<a>").attr("class", "carousel-item");
+      // carouselPic.attr("href", "#"+i+"!");
+      // let carouselImg = $("#pic" + i).attr("src", response.data[stateInfo].images[i].url);
+
+      // carouselPic.append(carouselImg);
+      // $("#pic" + i).append(carouselPic);
     }
     let stateActivities = response.data[stateInfo].activities;
     console.log(response.data[stateInfo].activities);
     for (i = 0; i < stateActivities.length; i++) {
       let stateLi = $("<li>");
-      stateLi.text(response.data[stateInfo].activities[i].name);
+      stateLi.text("- " + response.data[stateInfo].activities[i].name);
 
       $("#state-activities").append(stateLi);
     }
@@ -93,7 +96,7 @@ $.ajax({
     loadMap(lat, lon);
   });
 });
-
+}
 
 M.AutoInit();
 
@@ -102,6 +105,15 @@ $(document).ready(function(){
 });
      
 
-// $(document).ready(function(){
-//   $('.carousel').carousel();
-// });
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+
+
+$("#state").on("change", function () {
+  let state = $(this).val();
+
+  pickState(state);
+  console.log(state)
+  console.log("hi")
+})
