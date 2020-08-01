@@ -28,6 +28,7 @@
   margin-bottom: 3rem;
 }
 
+
 .park-list {
   padding-bottom: 2px;
   margin: 3px;
@@ -55,8 +56,8 @@
 }
 
 #park-description{
-    font-weight: bold;
-    font-size: 15px;
+    /* font-weight: bold; */
+    font-size: 20px;
 }
 
 #directions{
@@ -85,13 +86,13 @@
   display: inline;
 }
 
-.grid-list {
+/* .grid-list {
   display: grid;
   grid-template-columns: repeat(6, 2fr);
   font-weight: bold;
   font-size: 15px;
   padding-bottom: 25px;
-}
+} */
 
 .page-footer {
   background-color: #800000;

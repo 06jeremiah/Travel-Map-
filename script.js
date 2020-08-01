@@ -144,13 +144,9 @@ $(document).ready(function () {
   $(".modal").modal();
 });
 
-$(document).ready(function () {
-  $(".carousel").carousel();
-});
-
 $("#state").on("change", function () {
   let state = $(this).val();
 
   pickState(state);
-  localStorage.setItem("savedState", JSON.stringify(state));
-});
+
+})
