@@ -53,13 +53,14 @@ function pickState(state) {
       $("#park-description").text(response.data[stateInfo].description);
 
       let statePics = response.data[stateInfo].images;
-      for (i = 0; i < 5; i++) {
 
+
+
+      for (i = 0; i < 5; i++) {
 
         // let carouselPic = $("<a>").attr("class", "carousel-item");
         // carouselPic.attr("href", "#"+i+"!");
         // let carouselImg = $("#pic" + i).attr("src", response.data[stateInfo].images[i].url);
-
         // carouselPic.append(carouselImg);
         // $("#pic" + i).append(carouselPic);
       }
