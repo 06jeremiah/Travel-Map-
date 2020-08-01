@@ -86,15 +86,17 @@
   display: inline;
 }
 
-/* .grid-list {
-  display: grid;
-  grid-template-columns: repeat(6, 2fr);
-  font-weight: bold;
-  font-size: 15px;
-  padding-bottom: 25px;
-} */
-
 .page-footer {
   background-color: #800000;
 }
 
+#map{
+  width: 50%;
+  height: 400px;
+}
+
+@media (max-width: 750px) {
+ #map{
+   width: 100%;
+ }
+}

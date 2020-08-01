@@ -24,17 +24,6 @@ function loadMap(lat, lon) {
     })
     .addTo(map);
 }
-  function loadstateInfo(stateInfo) {
-    $("#state-activities").empty();
-    $("#state-link").empty();
-    $("#state-pics").empty();
-    $("#directions").empty();
-
-    $("#park-description").text(response.data[stateInfo].description);
-
-    let statePics = response.data[stateInfo].images;
-
-
 
 function pickState(state) {
   var queryURL =
@@ -67,22 +56,48 @@ function pickState(state) {
       $("#park-description").text(response.data[stateInfo].description);
 
       let statePics = response.data[stateInfo].images;
-      for (i = 0; i < 5; i++) {
-        // let carouselPic = $("<a>").attr("class", "carousel-item");
-        // carouselPic.attr("href", "#"+i+"!");
-        // let carouselImg = $("#pic" + i).attr("src", response.data[stateInfo].images[i].url);
-        // carouselPic.append(carouselImg);
-        // $("#pic" + i).append(carouselPic);
+
+      // Initialize carousel
+      var slider = $("#park-carousel");
+      slider.carousel();
+      // If images available
+      if (statePics.length > 1) {
+        // Remove placeholder img
+        $("#pic1").remove();
+        // Loop through available pics
+
+        for (i = 0; i < statePics.length; i++) {
+          // Add a new pic
+          slider.append(
+            '<a class="carousel-item" href="#' +
+              i +
+              '!"><img src="' +
+              statePics[i].url +
+              '"></a>'
+          );
+        }
       }
+      // Remove the 'initialized' class which prevents slider from initializing itself again when it's not needed
+      if (slider.hasClass("initialized")) {
+        slider.removeClass("initialized");
+      }
+      // Reinitialize the carousel
+      slider.carousel();
+
       let stateActivities = response.data[stateInfo].activities;
-      console.log(response.data[stateInfo].activities);
-      for (i = 0; i < stateActivities.length; i++) {
-        let stateLi = $("<li>");
-        stateLi.text("- " + response.data[stateInfo].activities[i].name);
-
-        $("#state-activities").append(stateLi);
+      if (stateActivities.length == 0) {
+        $("#state-activities").text(
+          "No activities available for this park, please visit their page for more information."
+        );
+      } else if (stateActivities.length > 0) {
+        for (i = 0; i < stateActivities.length; i++) {
+          let activityButton =
+            "<div class='col activity-list'>" +
+            response.data[stateInfo].activities[i].name +
+            "</div>";
+          $("#state-activities").append(activityButton);
+        }
       }
-
       let parkLink = $("<a>");
       parkLink.attr("class", "btn");
       parkLink.attr("href", response.data[stateInfo].url);
@@ -119,17 +134,10 @@ function pickState(state) {
       let newLatLon = JSON.parse(localStorage.getItem("savedLatLon"));
       loadstateInfo(newStateInfo);
       loadMap(newLatLon.lat, newLatLon.lon);
-    let stateActivities = response.data[stateInfo].activities;
-    console.log(response.data[stateInfo].activities);
-    for (i = 0; i < stateActivities.length; i++) {
-
-      let activityButton = "<div class='col activity-list'>" + response.data[stateInfo].activities[i].name + "</div>"
-      $("#state-activities").append(activityButton);
     }
-  }
-});
+  });
 }
-  }
+
 function loadsavedState() {
   if (localStorage.getItem("savedState") !== null) {
     let state = JSON.parse(localStorage.getItem("savedState"));
@@ -148,5 +156,5 @@ $("#state").on("change", function () {
   let state = $(this).val();
 
   pickState(state);
-
-})
+  localStorage.setItem("savedState", JSON.stringify(state));
+});
