@@ -24,6 +24,17 @@ function loadMap(lat, lon) {
     })
     .addTo(map);
 }
+  function loadstateInfo(stateInfo) {
+    $("#state-activities").empty();
+    $("#state-link").empty();
+    $("#state-pics").empty();
+    $("#directions").empty();
+
+    $("#park-description").text(response.data[stateInfo].description);
+
+    let statePics = response.data[stateInfo].images;
+
+
 
 function pickState(state) {
   var queryURL =
@@ -108,10 +119,17 @@ function pickState(state) {
       let newLatLon = JSON.parse(localStorage.getItem("savedLatLon"));
       loadstateInfo(newStateInfo);
       loadMap(newLatLon.lat, newLatLon.lon);
-    }
-  });
-}
+    let stateActivities = response.data[stateInfo].activities;
+    console.log(response.data[stateInfo].activities);
+    for (i = 0; i < stateActivities.length; i++) {
 
+      let activityButton = "<div class='col activity-list'>" + response.data[stateInfo].activities[i].name + "</div>"
+      $("#state-activities").append(activityButton);
+    }
+  }
+});
+}
+  }
 function loadsavedState() {
   if (localStorage.getItem("savedState") !== null) {
     let state = JSON.parse(localStorage.getItem("savedState"));
@@ -126,13 +144,9 @@ $(document).ready(function () {
   $(".modal").modal();
 });
 
-$(document).ready(function () {
-  $(".carousel").carousel();
-});
-
 $("#state").on("change", function () {
   let state = $(this).val();
 
   pickState(state);
-  localStorage.setItem("savedState", JSON.stringify(state));
-});
+
+})

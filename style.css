@@ -28,6 +28,7 @@
   margin-bottom: 3rem;
 }
 
+
 .park-list {
   padding-bottom: 2px;
   margin: 3px;
@@ -36,9 +37,27 @@
   background-color: teal;
 }
 
+#state-activities {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#state-activities > .activity-list {
+    margin: 3px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid teal;
+    color: teal;
+    height: 36px;
+    display: flex;
+    align-items: center;
+}
+
 #park-description{
-    font-weight: bold;
-    font-size: 15px;
+    /* font-weight: bold; */
+    font-size: 20px;
 }
 
 #directions{
@@ -67,13 +86,13 @@
   display: inline;
 }
 
-.grid-list {
+/* .grid-list {
   display: grid;
   grid-template-columns: repeat(6, 2fr);
   font-weight: bold;
   font-size: 15px;
   padding-bottom: 25px;
-}
+} */
 
 .page-footer {
   background-color: #800000;
