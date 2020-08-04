@@ -1,4 +1,3 @@
-
 // Api key for NPS api
 
 var apiKey = "ybHBduA57s39icEEjF2qadz3AtlfLgn9sn6AjddB";
@@ -56,10 +55,9 @@ function pickState(state) {
       $("#state-list").append(statebutton);
     }
 
-
     // Funtion that generates park buttons that can be clicked,
     // Generate park description, page link, images, activities, directions, directions link,
-    
+
     function loadstateInfo(stateInfo) {
       $("#state-activities").empty();
       $("#state-link").empty();
@@ -91,6 +89,12 @@ function pickState(state) {
               '"></a>'
           );
         }
+      } else {
+        $("#park-carousel").empty();
+        $("#park-carousel").append(
+          '<a class="carousel-item" href="#one!" id="pic1"><img src=""></a>',
+          "<p>No available pictures for display, please visit Park page for more information.</p>"
+        );
       }
 
       // Remove the 'initialized' class which prevents slider from initializing itself again when it's not needed
@@ -102,7 +106,7 @@ function pickState(state) {
 
       // State activity information generated
       // If no activities available notifies user to visit the park page for more information
-    
+
       let stateActivities = response.data[stateInfo].activities;
       if (stateActivities.length == 0) {
         $("#state-activities").text(
@@ -128,7 +132,7 @@ function pickState(state) {
 
       // Conditional for directions, if there is none it redirects user to visit park page,
       // Else it loads directions, and a link to their directions page
-      
+
       if (response.data[stateInfo].directionsInfo == false) {
         let dirText = $("<p>");
         dirText.text("Contact park for directions.");

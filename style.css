@@ -85,6 +85,9 @@
   font-family: papyrus;
   display: inline;
 }
+.carousel-item{
+  display: flex;
+}
 
 .page-footer {
   background-color: #800000;
