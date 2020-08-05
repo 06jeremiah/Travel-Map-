@@ -85,18 +85,21 @@
   font-family: papyrus;
   display: inline;
 }
-
-#map{
-  width: 50%;
-  height: 400px;
+.carousel-item{
+  display: flex;
 }
 
 .page-footer {
   background-color: #800000;
 }
 
+#map{
+  width: 50%;
+  height: 400px;
+}
+
 @media (max-width: 750px) {
-  #map{
-    width: 100%;
-  }
+ #map{
+   width: 100%;
  }
+}
