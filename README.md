@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-## RoamForth
-
-This application allows users to search each state for National Parks. 
-
-# Functionality
-
-# Sources
-
-# Images
-=======
 # RoamForth
 
 Link to website: https://06jeremiah.github.io/Travel-Map-/
@@ -34,4 +23,3 @@ When the application loads the user is given an option to get started. Once the 
 ![Roam Forth 3](assets/site-images/RoamForth3.png)
 ![Roam Forth 4](assets/site-images/RoamForth4.png)
 ![Roam Forth 5](assets/site-images/RoamForth5.png)
->>>>>>> ae707617161ca6fcb3476b1e360e7c5b7a3de065
