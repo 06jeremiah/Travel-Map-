@@ -49,7 +49,6 @@ function pickState(state) {
 
     // Loads park images to a carousel 
     // Also  loads activities, park buttons, park description, park link, directions, and directions link
-
     function loadstateInfo(stateInfo) {
       $("#state-activities").empty();
       $("#state-link").empty();
@@ -60,7 +59,7 @@ function pickState(state) {
 
       let statePics = response.data[stateInfo].images;
       
-      // Initialize carousel
+     // Initialize carousel
     var slider = $('#park-carousel');
     slider.carousel();
     // If images available	
@@ -72,7 +71,7 @@ function pickState(state) {
         $("#park-carousel").text("No available pictures for this park, please visit their page for more info.")
       } else if (statePics.length > 0){
       for (i = 0; i < statePics.length; i++) {
-        // Add a new pic
+      // Add a new pic
         slider.append('<a class="carousel-item" href="#' + i + '!"><img src="' + statePics[i].url + '"></a>');
       } 
     }
@@ -85,7 +84,6 @@ function pickState(state) {
     slider.carousel();
 
     // Code for activities, park buttons, park description, park link, directions, and directions link
-
     let stateActivities = response.data[stateInfo].activities;
     if (stateActivities.length == 0){
       $("#state-activities").text("No available activities for this park, please visit their page for more info.")
@@ -113,7 +111,6 @@ function pickState(state) {
     }
 
 // Click event that generates the park information, and also uses local storage to load the last searched state & park
-
     $(document).on("click", ".park-list", function () {
       let stateInfo = $(this).attr("data-state");
       loadstateInfo(stateInfo);
@@ -140,7 +137,6 @@ function pickState(state) {
   }
 
 // Local storage to load the state last chosen
-
 function loadsavedState() {
   if (localStorage.getItem("savedState") !== null) {
     let state = JSON.parse(localStorage.getItem("savedState"));
@@ -150,17 +146,14 @@ function loadsavedState() {
 loadsavedState();
 
 // Materialize initialization
-
 M.AutoInit();
 
 // Modal initialization
-
 $(document).ready(function () {
   $(".modal").modal();
 });
 
 // Event listener on change, to capture the state info
-
 $("#state").on("change", function () {
   let state = $(this).val();
 
